@@ -1,0 +1,17 @@
+# Gradle
+.gradle/
+build/
+
+# Eclipse
+eclipse/
+.settings/
+.classpath
+.project
+
+# Java
+*.class
+*.jar
+
+# Minecraft
+bin/
+run/

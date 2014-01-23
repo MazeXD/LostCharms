@@ -1,0 +1,16 @@
+[
+{
+  "modid": "lostcharms",
+  "name": "LostCharms",
+  "description": "A minecraft mod which adds missing and useful features",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["MazeXD"],
+  "credits": "Developed by MazeXD",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
