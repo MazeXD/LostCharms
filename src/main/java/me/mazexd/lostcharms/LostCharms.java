@@ -31,7 +31,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
 @Mod(modid = LostCharms.MODID, version = LostCharms.VERSION)
-@NetworkMod(clientSideRequired = false, serverSideRequired = false)
+@NetworkMod(clientSideRequired = true)
 public class LostCharms {
     public static final String MODID = "lostcharms";
     public static final String VERSION = "{$VERSION}";
