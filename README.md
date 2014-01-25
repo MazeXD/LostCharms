@@ -1,6 +1,8 @@
-LostCharms
+LostCharms [![Build Status](https://drone.io/github.com/MazeXD/LostCharms/status.png)](https://drone.io/github.com/MazeXD/LostCharms/latest)
 ==========
 A minecraft mod which adds missing and useful features.
+
+[Downloads](https://drone.io/github.com/MazeXD/LostCharms/files)
 
 ---
 
