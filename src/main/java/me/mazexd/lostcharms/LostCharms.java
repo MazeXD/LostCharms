@@ -51,6 +51,7 @@ public class LostCharms {
 
         MODULES = new ModuleManager();
         MODULES.registerModule(new VanillaModule());
+        MODULES.registerModule(new OpenPowersuitsModule());
 
         MODULES.preInit();
 

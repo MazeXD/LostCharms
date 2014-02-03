@@ -6,11 +6,17 @@ A minecraft mod which adds missing and useful features.
 
 ---
 
-## Features
+## Modules
+### Vanilla
 #### Enchantments
 Name               | Applies to | Description
 ------------------ | :--------: | ----------------------------------------------------------
 Aerial Effectivity | Helmet     | Same breaking speed in air (comparable to Aqua Affinity)
+
+
+### OpenPowersuits
+Integrates OpenPeripheral Terminal glasses into Modular Powersuits as a module
+
 
 More to come...
 

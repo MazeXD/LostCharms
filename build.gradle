@@ -24,6 +24,13 @@ minecraft {
 	version = "1.6.4-9.11.1.964"
 }
 
+jar {
+    manifest {
+        attributes 'FMLCorePlugin': 'me.mazexd.lostcharms.asm.LostCharmsLoadingPlugin'
+        attributes 'FMLCorePluginContainsFMLMod': 'true'
+    }
+}
+
 processResources
 {
     from(sourceSets.main.resources.srcDirs) {
@@ -34,5 +41,18 @@ processResources
 
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
+    }
+}
+
+dependencies {
+    compile 'MachineMuse:ModularPowersuits:0.10.0'
+    compile 'OpenMods:OpenModsLib:0.1'
+    compile 'OpenMods:OpenPeripheralAddons:0.1'
+}
+
+repositories {
+    maven {
+        name = "bintray"
+        url = "http://dl.bintray.com/mazexd/Minecraft"
     }
 }
