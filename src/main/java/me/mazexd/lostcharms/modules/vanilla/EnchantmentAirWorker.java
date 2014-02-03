@@ -21,33 +21,30 @@
  * THE SOFTWARE.
  */
 
-package me.mazexd.lostcharms;
+package me.mazexd.lostcharms.modules.vanilla;
 
-import java.io.File;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnumEnchantmentType;
 
-import me.mazexd.lostcharms.enchantment.EnchantmentAirWorker;
-import net.minecraftforge.common.Configuration;
-
-public class Settings {
-    private Configuration config;
-
-    // Enchantments
-    public EnchantmentAirWorker enchantAerial;
-
-    public Settings(File file)
+public class EnchantmentAirWorker extends Enchantment {
+    public EnchantmentAirWorker(int id, int weight)
     {
-        config = new Configuration(file);
+        super(id, weight, EnumEnchantmentType.armor_head);
+        setName("airWorker");
     }
 
-    public void load()
+    public int getMinEnchantability(int par1)
     {
-        config.load();
+        return 1;
+    }
 
-        int id = config.get("enchantments", "aerial-effectivity", 200).getInt();
-        enchantAerial = new EnchantmentAirWorker(id, 2);
+    public int getMaxEnchantability(int par1)
+    {
+        return this.getMinEnchantability(par1) + 40;
+    }
 
-        config.addCustomCategoryComment("enchantments", "Change the Ids only if you know what you are doing!!!");
-
-        config.save();
+    public int getMaxLevel()
+    {
+        return 1;
     }
 }

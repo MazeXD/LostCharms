@@ -21,30 +21,33 @@
  * THE SOFTWARE.
  */
 
-package me.mazexd.lostcharms.enchantment;
+package me.mazexd.lostcharms.modules.vanilla;
 
+import me.mazexd.lostcharms.LostCharms;
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnumEnchantmentType;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraftforge.common.ForgeHooks;
+import net.minecraftforge.event.ForgeSubscribe;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 
-public class EnchantmentAirWorker extends Enchantment {
-    public EnchantmentAirWorker(int id, int weight)
+public class EnchantmentHandler {
+    @ForgeSubscribe
+    public void adjustBreakSpeed(PlayerEvent.BreakSpeed event)
     {
-        super(id, weight, EnumEnchantmentType.armor_head);
-        setName("airWorker");
+        if (!ForgeHooks.canHarvestBlock(event.block, event.entityPlayer, event.metadata)) return;
+
+        if (LostCharms.isModuleActive(VanillaModule.ID))
+        {
+            if (!event.entityPlayer.onGround && hasEnchantment(event.entityPlayer, VanillaModule.enchantAerial))
+            {
+                event.newSpeed *= 5.0f;
+            }
+        }
     }
 
-    public int getMinEnchantability(int par1)
+    private boolean hasEnchantment(EntityPlayer player, Enchantment enchantment)
     {
-        return 1;
-    }
-
-    public int getMaxEnchantability(int par1)
-    {
-        return this.getMinEnchantability(par1) + 40;
-    }
-
-    public int getMaxLevel()
-    {
-        return 1;
+        return EnchantmentHelper.getMaxEnchantmentLevel(enchantment.effectId, player.getLastActiveItems()) > 0;
     }
 }
